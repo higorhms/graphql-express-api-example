@@ -1,41 +1,35 @@
-import express from 'express';
-import { buildSchema } from 'graphql';
-import graphqlHTTP from 'express-graphql';
+import { ApolloServer, gql } from 'apollo-server';
 
-const user = { name: 'Higor', email: 'higor@higor.com', password: '123456' };
+const typeDefs = gql`
+  type Book {
+    title: String
+    author: String
+  }
 
-const schema = buildSchema(`
   type Query {
-    users: User
+    books: [Book]
   }
+`;
 
-  type User {
-    name: String
-    email: String
-    password: String
-  }
-`);
+const books = [
+  {
+    title: 'Harry Potter and the Chamber of Secrets',
+    author: 'J.K. Rowling',
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton',
+  },
+];
 
-const Controller = {
-  users: {
-    name: () => user.name,
-    email: () => user.email,
-    password: () => user.password,
+const resolvers = {
+  Query: {
+    books: () => books,
   },
 };
 
-const app = express();
-app.use(express.json());
+const server = new ApolloServer({ typeDefs, resolvers });
 
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema,
-    rootValue: Controller,
-    graphiql: true,
-  }),
-);
-
-app.listen(3333, () => {
-  console.log('Server started on port 3333');
+server.listen().then(({ url }) => {
+  console.log(`🚀  Server ready at ${url}`);
 });
