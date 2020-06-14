@@ -1,34 +1,50 @@
 import { ApolloServer, gql } from 'apollo-server';
 
-const typeDefs = gql`
-  type Book {
-    title: String
-    author: String
+const myGraphqlSchema = gql`
+  type User {
+    name: String
+    email: String
+  }
+
+  type Mutation {
+    addUser(name: String, email: String): User
   }
 
   type Query {
-    books: [Book]
+    users: [User]
   }
 `;
 
-const books = [
+const users = [
   {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
+    name: 'Higor',
+    email: 'higor@higor.com',
   },
   {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
+    name: 'John',
+    email: 'John@john.com',
   },
 ];
 
 const resolvers = {
   Query: {
-    books: () => books,
+    users: () => users,
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const mutations = {
+  addUser: ({ name, email }: { name: string; email: string }) => {
+    users.push({ name, email });
+    console.log(users);
+    return { name, email };
+  },
+};
+
+const server = new ApolloServer({
+  typeDefs: myGraphqlSchema,
+  resolvers,
+  rootValue: mutations,
+});
 
 server.listen().then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
