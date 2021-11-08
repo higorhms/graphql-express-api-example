@@ -9,7 +9,7 @@
     "dev:server": "ts-node-dev --inspect --transpileOnly --ignore-watch node_modules src/server.ts"
   },
   "dependencies": {
-    "apollo-server": "^2.14.4",
+    "apollo-server": "^2.25.3",
     "graphql": "^15.1.0"
   },
   "devDependencies": {
