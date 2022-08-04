@@ -1,0 +1,10 @@
+type Query {
+  getByZipCode(id: String!): ZipCodeLookupModel
+}
+
+type ZipCodeLookupModel {
+  id: String!
+  zipCode: String!
+  city: String!
+  county: String!
+}
