@@ -1,5 +1,6 @@
 interface IEnv {
   apiPort: number;
+  apiSecret: string;
   typeorm: {
     postgresql: {
       host: string;
@@ -13,6 +14,7 @@ interface IEnv {
 
 export const ENV: IEnv = {
   apiPort: Number(process.env.API_PORT),
+  apiSecret: process.env.APP_SECRET as string,
   typeorm: {
     postgresql: {
       host: process.env.POSTGRES_DB_HOST as string,

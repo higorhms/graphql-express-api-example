@@ -1,4 +1,5 @@
 import { ApolloServer } from 'apollo-server';
+import { authContext } from './context/auth.context';
 import schema from './schema';
 
 const setHttpPlugin = {
@@ -16,6 +17,7 @@ const setHttpPlugin = {
 
 const server = new ApolloServer({
   schema,
+  context: authContext,
   csrfPrevention: true,
   cache: 'bounded',
   plugins: [setHttpPlugin],

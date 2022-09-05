@@ -1,10 +1,14 @@
-import { ZipCodeLookupRepository } from '../repositories/zipcode-lookup.repository';
-import { ZipCodeLookupSeed } from './zipcode-lookup/init';
+import { TodoRepository } from '../repositories/todo.repository';
+import { UserRepository } from '../repositories/user.repository';
+import { TodosSeed } from './todos/init';
+import { UsersSeed } from './users/init';
 
 export class TypeORMPostgresqlSeed {
   static async init(): Promise<void> {
-    const repository = new ZipCodeLookupRepository();
+    const userRepository = new UserRepository();
+    const todoRepository = new TodoRepository();
 
-    await new ZipCodeLookupSeed(repository).seed();
+    await new UsersSeed(userRepository).seed();
+    await new TodosSeed(userRepository, todoRepository).seed();
   }
 }

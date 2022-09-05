@@ -4,9 +4,9 @@ services:
   postgres:
     image: postgres
     environment:
-      POSTGRES_USER: zipcode-api
-      POSTGRES_PASSWORD: zipcode-api
-      POSTGRES_DB: zipcode-api
+      POSTGRES_USER: todo-database
+      POSTGRES_PASSWORD: todo-database
+      POSTGRES_DB: todo-database
     ports:
       - 5432:5432
 

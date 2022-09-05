@@ -7,21 +7,18 @@ import {
   Column,
 } from 'typeorm';
 
-import { ZipCodeLookupModel } from '../../../../domains/zipcode-lookup/models/zipcode-lookup.model';
+import { UserModel } from '../../../../domains/users/models/user.model';
 
-@Entity()
-export class ZipCodeLookupEntity implements ZipCodeLookupModel {
+@Entity('users')
+export class UserEntity implements UserModel {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
-  zipCode: string;
+  @Column({ unique: true })
+  email: string;
 
   @Column()
-  city: string;
-
-  @Column()
-  county: string;
+  password: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

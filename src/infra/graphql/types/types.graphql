@@ -1,10 +1,17 @@
 type Query {
-  getByZipCode(id: String!): ZipCodeLookupModel
+  findAllTodos: [TodoModel]
 }
 
-type ZipCodeLookupModel {
-  id: String!
-  zipCode: String!
-  city: String!
-  county: String!
+type Mutation {
+  createTodo(status: String!, title: String!, description: String!): TodoModel
+  updateTodoStatus(todoId: String!, status: String!): TodoModel
+  login(email: String!, password: String!): String
 }
+
+type TodoModel {
+  id: String!
+  status: String!
+  title: String!
+  description: String!
+}
+
