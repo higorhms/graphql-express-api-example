@@ -1,57 +1,61 @@
-# BFF Sample (Documentação em construção)
+<h4 align="center">
+  🚀 ZipCode API
+</h4>
 
-Stack GraphQL + NodeJS + Typescript + Apollo Server
+<p align="center">
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-coverage">Coverage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-technologies">Technologies</a>
+</p>
 
+<p align="center">		 
 
-## install
+  <img alt="Language" src="https://img.shields.io/github/languages/top/higorhms/zipcode-api?style=for-the-badge">
+	
+  <a href="https://www.linkedin.com/in/higormartinsdasilva/" target="_blank">
+    <img alt="Made by Higor Martins" src="https://img.shields.io/github/languages/count/higorhms/zipcode-api?style=for-the-badge">
+  </a>
 
-1. Obter nodejs 12 ou posterior.
-2. Tenha última versão da master.
+  <a href="https://github.com/MegaHack-Shawee/VitrineAmericanas" target="_blank">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/higorhms/zipcode-api?style=for-the-badge">
+  </a>
 
-## Setup
+   <a href="https://github.com/MegaHack-Shawee/VitrineAmericanas/stargazers" target="_blank">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/higorhms/zipcode-api?style=for-the-badge">
+  </a>
+  
+</p>
 
-1. `npm install` para instalar dependencias. 
+## 💻 Project
 
-Para iniciar o servidor Apollo
-`ts-node index.ts`
-
-Acesse servidor Apollo `http://localhost:8082/` e abaixo um exemplo de Query para teste.
-
-```
-{
-  books {
-    title
-    author
-  }
-}
-```
-
-
-## Executando Localmente
-
-Ativando o desenvolvimento local:
-
-Acesse arquivo [.env](./.env) e consulte as variáveis de seu ambiente.
-
-Após a configuração do ambiente, faça a execução do comando:
-
-    npm run start:dev
-
-Haverá um log onde haverão as informações de porta e do probe, conforme exemplo:
-
-    Using Node Environment development
-    Probe listening on port 45851
-    Listening on port 8080 at context 
-
-## Executando o docker
-
-No instante em que o código estiver rodando localmente, havera a possibilidade de criar o docker utilizando o seguite comando:
-
-    npm run docker-build
-
-# Sample BFF 
-
-Para um exemplo de BFF, acessar [NATION](https://watery-violet-7c7.notion.site/Pol-ticas-de-Desenvolvimento-para-BFFs-0fe76e69d8374f8790c6af6b85718ff9).
+A Simple GraphQL API service in Nodejs that accepts requests with a zip code and returns the city and county for the zip code
 
 
+## 🚀 Coverage
 
+100% only of the business rule
+- `yarn test` or `npm run test`
+
+![Screen Shot 2022-08-05 at 12 09 48](https://user-images.githubusercontent.com/44821959/183108441-b1f635ff-d37f-427e-a01e-3a01c4857eca.png)
+
+## 🚀 Technologies
+
+This project was developed using:
+
+- [NodeJS](https://nodejs.org/en/)
+- [express](https://expressjs.com/pt-br/)
+- [typescript](https://www.typescriptlang.org/)
+- [typeorm](https://typeorm.io/)
+- [postgres](https://www.postgresql.org/)
+- [dotenv]()
+- [Apollo](https://www.apollographql.com/docs/apollo-server/)
+- [GraphQL](https://graphql.org/)
+
+
+## 🏃‍♂️ Installing and running the project
+
+- Download the project
+- Update the .env with your settings
+- `yarn` to install the dependencies
+- `yarn dev`to start the project with your own postgresql database
+- `yarn dev:compose`to start the project using the docker-compose.yml file
