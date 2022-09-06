@@ -30,7 +30,7 @@
 
 ## 💻 Project
 
-A Simple GraphQL API using Apollo Server to create and manage TODOS
+A GraphQL API created using NodeJS, Apollo Server and PostgreSQL to manage TODOS
 
 ## 🚀 Seeds
 
