@@ -53,7 +53,7 @@ mutation Authentication($email: String!, $password: String! ){
 
 ## 🚀 Coverage
 
-Example coverage using JEST
+Coverage example using JEST
 - `yarn test` or `npm run test`
 
 ![Screen Shot 2022-09-05 at 21 07 11](https://user-images.githubusercontent.com/44821959/188522427-478bc399-7a9e-4cf2-8e65-9f1658421edc.png)
