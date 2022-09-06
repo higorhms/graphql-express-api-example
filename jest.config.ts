@@ -9,5 +9,5 @@ module.exports = {
     '**/__tests__/**/*.+(spec|test).[jt]s?(x)',
     '**/?(*.)+(spec|test).[tj]s?(x)',
   ],
-  collectCoverageFrom: ['src/domains/**/*.ts'],
+  collectCoverageFrom: ['**/use-cases/**/*.ts'],
 };

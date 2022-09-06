@@ -6,7 +6,7 @@ import { TodoModel } from '../../../domains/todo/models/todo.model';
 
 const todoResolver = {
   Query: {
-    findAllTodos: async (
+    findAll: async (
       _: any,
       args: any,
       context: any,

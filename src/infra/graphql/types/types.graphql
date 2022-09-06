@@ -1,5 +1,5 @@
 type Query {
-  findAllTodos: [TodoModel]
+  findAll: [TodoModel]
 }
 
 type Mutation {

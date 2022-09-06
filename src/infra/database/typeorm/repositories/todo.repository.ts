@@ -32,7 +32,7 @@ export class TodoRepository implements ITodoRepository {
     });
   }
 
-  public async save(zipCode: DeepPartial<TodoModel>): Promise<TodoModel> {
-    return this.repository.save(zipCode);
+  public async save(todo: DeepPartial<TodoModel>): Promise<TodoModel> {
+    return this.repository.save(todo);
   }
 }

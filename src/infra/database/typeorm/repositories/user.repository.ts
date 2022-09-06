@@ -15,7 +15,7 @@ export class UserRepository implements IUserRepository {
     return this.repository.findOne({ where: { email } });
   }
 
-  public async save(zipCode: DeepPartial<UserModel>): Promise<UserModel> {
-    return this.repository.save(zipCode);
+  public async save(todo: DeepPartial<UserModel>): Promise<UserModel> {
+    return this.repository.save(todo);
   }
 }
